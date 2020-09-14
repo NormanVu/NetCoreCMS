@@ -23,6 +23,7 @@ namespace NetCoreCMS.Framework.Core.Models
             WebSitePageSize = 10;
             AdminPageSize = 10;
             TablePrefix = "ncc_";
+            IsMultiLangual = false;
         }
         
         public string DomainName { get; set; }

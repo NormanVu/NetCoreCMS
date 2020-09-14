@@ -112,7 +112,7 @@ namespace NetCoreCMS.Framework.Core.Extensions
         {
             ResourcePathExpendar.RegisterStaticFiles(env, app, GlobalContext.Modules, GlobalContext.Themes);
 
-            //app.UseThemeActivator(env, loggerFactory);
+            app.UseThemeActivator(env, loggerFactory);
             //app.UseModuleActivator(env, _mvcBuilder, _services, loggerFactory);
 
             app.UseResponseCaching(); //Use this attrib for cache [ResponseCache(Duration = 20)]
@@ -139,12 +139,12 @@ namespace NetCoreCMS.Framework.Core.Extensions
 
                 NccWebSiteWidgetService nccWebsiteWidgetServices = serviceProvider.GetService<NccWebSiteWidgetService>();
                 NccWebSiteService nccWebsiteService = serviceProvider.GetService<NccWebSiteService>();
-                NccMenuService menuServic = serviceProvider.GetService<NccMenuService>();
+                NccMenuService menuService = serviceProvider.GetService<NccMenuService>();
 
                 GlobalContext.WebSite = nccWebsiteService.LoadAll().FirstOrDefault();
                 ThemeHelper.WebSite = GlobalContext.WebSite;
                 GlobalContext.WebSiteWidgets = nccWebsiteWidgetServices.LoadAll();
-                GlobalContext.Menus = menuServic.LoadAllSiteMenus();
+                GlobalContext.Menus = menuService.LoadAllSiteMenus();
             }
 
             app.UseMaintenance();

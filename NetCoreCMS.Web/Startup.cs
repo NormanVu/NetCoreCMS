@@ -251,6 +251,7 @@ namespace NetCoreCMS.Web
             GlobalContext.Modules = new List<IModule>();
             GlobalContext.Menus = new List<NccMenu>();
             GlobalContext.Themes = new List<Theme>();
+            GlobalContext.WebSite = new NccWebSite();
         }
         private void AddLogger()
         {

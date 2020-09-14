@@ -147,8 +147,7 @@ namespace NetCoreCMS.Framework.Setup
             UserManager<NccUser> userManager,
             RoleManager<NccRole> roleManager,
             SignInManager<NccUser> signInManager,
-            WebSiteInfo setupInfo
-            )
+            WebSiteInfo setupInfo)
         {   
             
             CreateCmsDefaultRoles(nccDbContext, roleManager);
